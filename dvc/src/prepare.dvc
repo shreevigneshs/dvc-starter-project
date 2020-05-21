@@ -1,0 +1,13 @@
+md5: bfbe2ec24bd2239585b969ec7661906a
+cmd: python prepare.py ..\resources\data.xml
+deps:
+- md5: 43048272a0413c2cf1bd749d6546f16d
+  path: prepare.py
+- md5: a304afb96060aad90176268345e10355
+  path: ../resources/data.xml
+outs:
+- md5: 6836f797f3924fb46fcfd6b9f6aa6416.dir
+  path: ../resources/prepared
+  cache: true
+  metric: false
+  persist: false
