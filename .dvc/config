@@ -1,0 +1,4 @@
+[core]
+    remote = my_local_store
+['remote "my_local_store"']
+    url = D:/dvc_resources
