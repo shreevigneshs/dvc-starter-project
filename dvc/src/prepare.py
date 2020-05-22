@@ -6,7 +6,7 @@ import re
 import os
 import errno
 
-if len(sys.argv) != 2:
+if len(sys.argv) != 3:
     sys.stderr.write('Arguments error. Usage:\n')
     sys.stderr.write('\tpython prepare.py data\n')
     sys.exit(1)
@@ -15,9 +15,11 @@ if len(sys.argv) != 2:
 split = 0.20
 random.seed(20170426)
 
-input = input = sys.argv[1]
-output_train = os.path.join('..', 'resources', 'prepared', 'train.tsv')
-output_test = os.path.join('..', 'resources', 'prepared', 'test.tsv')
+input = sys.argv[1]
+output_dir = sys.argv[2]
+output_train = os.path.join(output_dir, 'train.tsv')
+output_test = os.path.join(output_dir, 'test.tsv')
+
 
 def mkdir_p(path):
     try:
@@ -49,7 +51,7 @@ def process_posts(fd_in, fd_out_train, fd_out_test, target_tag):
             sys.stderr.write('Skipping the broken line {}: {}\n'.format(num, ex))
 
 
-mkdir_p(os.path.join('..', 'resources', 'prepared'))
+mkdir_p(os.path.join(output_dir))
 
 with io.open(input, encoding='utf8') as fd_in:
     with io.open(output_train, 'w', encoding='utf8') as fd_out_train:

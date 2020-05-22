@@ -1,13 +1,14 @@
-md5: bfbe2ec24bd2239585b969ec7661906a
-cmd: python prepare.py ..\resources\data.xml
+md5: 0d81a6dee2cb00682d63dbd3a1628d61
+cmd: python dvc\src\prepare.py dvc\resources\data.xml dvc\resources\prepared
+wdir: ../..
 deps:
-- md5: 43048272a0413c2cf1bd749d6546f16d
-  path: prepare.py
+- md5: 249fce547a215dbfc4ff7b165cf2ebc8
+  path: dvc/src/prepare.py
 - md5: a304afb96060aad90176268345e10355
-  path: ../resources/data.xml
+  path: dvc/resources/data.xml
 outs:
 - md5: 6836f797f3924fb46fcfd6b9f6aa6416.dir
-  path: ../resources/prepared
+  path: dvc/resources/prepared
   cache: true
   metric: false
   persist: false
